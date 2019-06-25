@@ -36,7 +36,7 @@
 					<script type="text/template">
 						## What is SciJava?
 
-						* Short-Cut: **Sci**entific	**Java**
+						* Stands for **Sci**entific	**Java**
 						* Maven Infrastructure:
 						  * Repository: https://maven.scijava.org
 						  * Configuration: pom-scijava
@@ -54,7 +54,8 @@
 
 						Runs everywhere:
 						* In your IDE
-						* As FIJI
+						* In FIJI / ImageJ
+						* In KNIME
 						* Standalone Jar
 						* Update-Sites
 						* Scripts
@@ -112,6 +113,7 @@
 						{
 						...
 						```
+					</script>
 				</section>
 				<section data-markdown style="text-align:left;">
 					<script type="text/template">
@@ -145,7 +147,7 @@
 					<script type="text/template">
 						### SciJava Context
 
-						A Context holds a list of all SciJava service,
+						Holds a list of all SciJava service,
 						sorted by class and priority.
 
 						When Context is created one instance of each service is created.
@@ -154,25 +156,34 @@
 						UIService uiService = context.service(UIService.class);
 						```
 
-						`new ImageJ()` is a wrapper around Context.
+						### ImageJ Gateway
+						```java
+						ImageJ imageJ = new ImageJ();
+						UIService uiService = imageJ.ui();
+						```
+					</script>
+				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						## Extensibility
+
+						Service can be overloaded. Highest priority wins.
+
+						Interesting extension points:
+						* Command
+						* Converter
+						* Display
+						* InputWidget
+						* Your own plugins
+					</script>
 				</section>
 				<section>
-					<h2>Extensibility</h2>
-
-					You may overload any service, with a higher priority one.
-
-					Interesting Extension Points:
-					* Command
-					* Converter
-					* InputWidget
-
-				</section>
-				<section>
-					<h2>Examples</h2>
+					<h2>Examples & Exercises</h2>
 					<ol>
+						<li>Get Services</li>
 						<li>Animal Plugins & Service</li>
-						<li>Display Birds & Colors</li>
-						<li>InputWidget</li>
+						<li>Birds Display</li>
+						<li>Create Color Display</li>
 					</ol>
 				</section>
 			</div>
