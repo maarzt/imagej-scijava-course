@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.bird_display;
+package de.mpicbg.learnathon.course.scijava.bird_display;
 
 /**
  * Small example class, that represents a bird.

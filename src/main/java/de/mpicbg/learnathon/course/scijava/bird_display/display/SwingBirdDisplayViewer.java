@@ -29,12 +29,10 @@
  * #L%
  */
 
-package de.mpicbg.learnathon.course.bird_display.display;
+package de.mpicbg.learnathon.course.scijava.bird_display.display;
 
-import de.mpicbg.learnathon.course.bird_display.Bird;
+import de.mpicbg.learnathon.course.scijava.bird_display.Bird;
 import net.miginfocom.swing.MigLayout;
-import org.scijava.Context;
-import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.ui.viewer.DisplayViewer;
 
