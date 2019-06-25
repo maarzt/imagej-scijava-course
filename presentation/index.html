@@ -27,117 +27,74 @@
 		<div class="reveal">
 			<div class="slides" stype="width:1200px">
 				<section>
-					<h1>Regions of Interest</h1>
-					ROIs in ImageJ2
+					<h1>SciJava & ImageJ</h1>
+					<img src="images/scijava-icon.png" style="width:30%;">
+					<img src="images/imagej-icon.png" style="width:30%;">
+					<h2>Context, Services, Plugins & Commands</h2>
 				</section>
-				<section data-markdown>
+				<section>
+					<img src="images/software-architecture.svg" style="width:80%;">
+				</section>
+				<section data-markdown style="text-align:left;">
 					<script type="text/template">
-						## What is a ROI?
+						## SciJava Advantages
 
-						![](images/roi.png)
+						Runs everywhere:
+						* In your IDE
+						* As FIJI
+						* Standalone Jar
+						* Update-Sites
+						* Scripts
+						* PyImageJ
+						* Travis
+					</script>
+				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						## What is SciJava?
 
-						Note:
-
-						* Region of Image
-						* Particularly interesting by the user
-						* Operations like Filters
-						* Calculate values: mean, area or histograms
+						* **Plugin - Framework**
+						* https://maven.scijava.org
+						* pom-scijava
 					</script>
 				</section>
 				<section style="text-align:left;">
-					<h2>ImageJ1 ROIs</h2>
-					<div style="width:60%; float:left;">
-
-						<p>Pros:</p>
+					<h2>Service Oriented Architecture</h2>
+					<div style="width:50%; float:left;">
+						<p>Services:</p>
 						<ul>
-							<li>Interactive selection tools</li>
-							<li>ROI Manager</li>
-							<li>Visualization</li>
-						</ul>
-
-						<p>Cons:</p>
-						<ul>
-							<li>Only 2D</li>
-							<li>Hardly ImgLib2 compatible</li>
-						</ul>
-
-						<p>Code:</p>
-						<pre><code class="hljava" data-trim>
-							imagePlus.getRoi();
-							imagePlus.setRoi(roi);
-							imagePlus.getOverlay();
-							imagePlus.setOverlay(overlay);
-							</code></pre>
-					</div>
-
-					<div style="width:40%; float:right;">
-						<img src="images/rois-tools.png">
-					</div>
-				</section>
-				<section data-markdown style="text-align:left;">
-					<script type="text/template">
-						## ImgLib2: Mask, RealMask
-
-						![](images/predicate.png)
-
-						Pro:
-						* AND, OR, NOT, XOR, MINUS
-						* Integrated in ImgLib2
-						* Convertible to ImageJ1 ROIs
-						* N-dimensional
-
-						Cons:
-						* No interactive tools
-						* No iteration
-						* Many classes and interfaces: MaskInterval, RealMaskRealInterval, ...
-					</script>
-				</section>
-				<section style="text-align:left;">
-					<h2>ImgLib2: IterableRegion</h2>
-					<div style="width:60%; float:left;">
-
-						<p>Pros:</p>
-						<ul>
-							<li>Easy Iteration</li>
-							<li>Integrated in ImgLib2</li>
-							<li>LabelRegions are IterableRegions</li>
-							<li>Useful in algorithms</li>
-							<li>N-dimensional</li>
-						</ul>
-
-						<p>Cons:</p>
-						<ul>
-							<li>No interactive UI tools</li>
-							<li>No logical operations</li>
+							<li>UIService</li>
+							<li>LogService</li>
+							<li>DisplayService</li>
+							<li>CommandService</li>
+							<li>IOService</li>
+							<li>MenuService</li>
+							<li>OpService</li>
+							<li>SearchService</li>
+							<li>ScriptService</li>
 						</ul>
 					</div>
-
-					<div style="width:40%; float:right;">
-						<img src="images/iterable-region.svg" style="width:100%">
+					<div style="width:50%; float:right;">
+						<p>Plugins:</p>
+						<ul>
+							<li>Services</li>
+							<li>Commands</li>
+							<li>Ops</li>
+							<li>Displays</li>
+							<li>Widgets</li>
+						</ul>
 					</div>
 				</section>
-				<section data-markdown style="text-align:left;">
-					<script type="text/template">
-						## Conclusion
-
-						ImageJ2 + ROIs = complicated
-
-
-						* IJ1 ROIs: GUI Tools
-						* Mask, RealMask: Logical Operations
-						* Iteration: Algorithms
-
-
-						Conversion is required:
-						* IJ1 ROIs <=> RealMask, Mask <=> IterableRegions
-					</script>
+				<section>
+					<h2>Extensibility</h2>
 				</section>
-				<section data-markdown style="text-align:left;">
-					<script type="text/template">
-						## Exercises
-
-						Solutions are in the git branches
-					</script>
+				<section>
+					<h2>Examples</h2>
+					<ol>
+						<li>Animal Plugins & Service</li>
+						<li>Display Birds & Colors</li>
+						<li>InputWidget</li>
+					</ol>
 				</section>
 			</div>
 		</div>
