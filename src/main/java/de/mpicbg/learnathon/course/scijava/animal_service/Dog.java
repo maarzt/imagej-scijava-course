@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.animals;
+package de.mpicbg.learnathon.course.scijava.animal_service;
 
 import org.scijava.plugin.Plugin;
 
