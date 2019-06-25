@@ -3,6 +3,10 @@ package de.mpicbg.learnathon.course.scijava.services;
 import org.scijava.Context;
 import org.scijava.ui.UIService;
 
+/**
+ * Exercise:
+ * Services can be retrieved from the context (class Context in org.scijava)
+ */
 public class Example2 {
 
 	public static void main(String... args) {

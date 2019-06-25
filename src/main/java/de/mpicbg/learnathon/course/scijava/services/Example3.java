@@ -5,6 +5,10 @@ import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.ui.UIService;
 
+/**
+ * Exercise:
+ * Services can be injected using Context.inject(Object).
+ */
 public class Example3 {
 
 	@Parameter
