@@ -32,6 +32,19 @@
 					<img src="images/imagej-icon.png" style="width:30%;">
 					<h2>Context, Services, Plugins & Commands</h2>
 				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						## What is SciJava?
+
+						* Short-Cut: **Sci**entific	**Java**
+						* Maven Infrastructure:
+						  * Repository: https://maven.scijava.org
+						  * Configuration: pom-scijava
+						* Java Library:
+						  * Used as core / foundation of ImageJ2
+						  * Plugin-Framework that is used by ImageJ2
+					</script>
+				</section>
 				<section>
 					<img src="images/software-architecture.svg" style="width:80%;">
 				</section>
@@ -49,15 +62,6 @@
 						* Travis
 					</script>
 				</section>
-				<section data-markdown style="text-align:left;">
-					<script type="text/template">
-						## What is SciJava?
-
-						* **Plugin - Framework**
-						* https://maven.scijava.org
-						* pom-scijava
-					</script>
-				</section>
 				<section style="text-align:left;">
 					<h2>Service Oriented Architecture</h2>
 					<div style="width:50%; float:left;">
@@ -65,11 +69,12 @@
 						<ul>
 							<li>UIService</li>
 							<li>LogService</li>
-							<li>DisplayService</li>
 							<li>CommandService</li>
 							<li>IOService</li>
-							<li>MenuService</li>
 							<li>OpService</li>
+							<li>ConvertService</li>
+							<li>MenuService</li>
+							<li>DisplayService</li>
 							<li>SearchService</li>
 							<li>ScriptService</li>
 						</ul>
@@ -86,7 +91,81 @@
 					</div>
 				</section>
 				<section>
+					<h2>SciJava - Java Code</h2>
+					<h3>Classes & Infrastructure</h3>
+				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						### SciJava Services
+
+						Interface
+						```java
+						public interface UIService extends SciJavaService {
+						...
+						```
+
+						Default Implementation
+						```java
+						@Plugin(type = Service.class)
+						public final class DefaultUIService extends AbstractService implements
+						UIService
+						{
+						...
+						```
+				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						### SciJava Plugins
+
+						Any class annotated with @Plugin is a SciJava plugin.
+
+						For example:
+
+						Commands are Plugins:
+						```java
+						@Plugin(type = Command.class, menuPath = "Plugins>Hello World")
+						public class HelloWorldCommand<T extends RealType<T>> implements Command {
+						...
+						```
+
+						Services are Plugins too:
+						```java
+						@Plugin(type = Service.class)
+						public final class DefaultUIService extends AbstractService implements
+						UIService
+						{
+						...
+						```
+
+						There are display plugins, converter plugins.
+						You can add you on plugin types.
+					</script>
+				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						### SciJava Context
+
+						A Context holds a list of all SciJava service,
+						sorted by class and priority.
+
+						When Context is created one instance of each service is created.
+						```java
+						Context context = new Context();
+						UIService uiService = context.service(UIService.class);
+						```
+
+						`new ImageJ()` is a wrapper around Context.
+				</section>
+				<section>
 					<h2>Extensibility</h2>
+
+					You may overload any service, with a higher priority one.
+
+					Interesting Extension Points:
+					* Command
+					* Converter
+					* InputWidget
+
 				</section>
 				<section>
 					<h2>Examples</h2>
