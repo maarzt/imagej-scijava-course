@@ -47,9 +47,6 @@ import java.awt.*;
 @Plugin(type = DisplayViewer.class) public class SwingBirdDisplayViewer
 		extends EasySwingDisplayViewer< Bird >
 {
-
-	@Parameter Context context;
-
 	/**
 	 * Keeps a reference to the {@link Bird} that is displayed.
 	 */
@@ -72,9 +69,6 @@ import java.awt.*;
 
 	@Override protected JPanel createDisplayPanel(Bird bird)
 	{
-		System.out.println(
-				"JPanel required for object " + bird + " in context " +
-						context + ".");
 		this.bird = bird;
 		final JPanel panel = new JPanel();
 		panel.setLayout(new MigLayout());
