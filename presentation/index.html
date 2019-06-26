@@ -25,9 +25,9 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides" stype="width:1200px">
+			<div class="slides" stype="width:1400px">
 				<section>
-					<h1>SciJava & ImageJ</h1>
+					<h1>Deep Dive Into ImageJ & SciJava</h1>
 					<img src="images/scijava-icon.png" style="width:30%;">
 					<img src="images/imagej-icon.png" style="width:30%;">
 					<h2>Context, Services, Plugins & Commands</h2>
@@ -108,8 +108,8 @@
 						Default Implementation
 						```java
 						@Plugin(type = Service.class)
-						public final class DefaultUIService extends AbstractService implements
-						UIService
+						public final class DefaultUIService extends AbstractService
+						        implements UIService
 						{
 						...
 						```
@@ -125,18 +125,18 @@
 
 						Commands are Plugins:
 						```java
-						@Plugin(type = Command.class, menuPath = "Plugins>Hello World")
-						public class HelloWorldCommand<T extends RealType<T>> implements Command {
-						...
+						@Plugin(type = Command.class, menuPath = "...")
+						public class HelloWorldCommand<T extends RealType<T>>
+						         implements Command
+						{ ...
 						```
 
 						Services are Plugins too:
 						```java
 						@Plugin(type = Service.class)
-						public final class DefaultUIService extends AbstractService implements
-						UIService
-						{
-						...
+						public final class DefaultUIService extends AbstractService
+							implements UIService
+						{ ...
 						```
 
 						There are display plugins, converter plugins.
@@ -147,10 +147,10 @@
 					<script type="text/template">
 						### SciJava Context
 
-						Holds a list of all SciJava service,
-						sorted by class and priority.
+						* Creates a instance of each service.
+						* Holds a list of all services.<br>
+						Sorted by class and priority.
 
-						When Context is created one instance of each service is created.
 						```java
 						Context context = new Context();
 						UIService uiService = context.service(UIService.class);
@@ -185,6 +185,16 @@
 						<li>Birds Display</li>
 						<li>Create Color Display</li>
 					</ol>
+				</section>
+				<section data-markdown style="text-align:left;">
+					<script type="text/template">
+						## More Topics
+
+						* What happens when a Command / Module is executed?
+						* Use the IDE to find classes, interface and their implementations.
+						* Services in scijava-common
+						* Legacy UI
+					</script>
 				</section>
 			</div>
 		</div>
