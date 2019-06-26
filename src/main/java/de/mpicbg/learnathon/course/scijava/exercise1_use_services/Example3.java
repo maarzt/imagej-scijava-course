@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.scijava.exercise1_services;
+package de.mpicbg.learnathon.course.scijava.exercise1_use_services;
 
 import org.scijava.Context;
 import org.scijava.log.LogService;
@@ -27,7 +27,8 @@ public class Example3 {
 		// BEGIN OF THE EXERCISE
 		// 1. Create a new Context
 		Context context = null;
-		// 2. Call the method context.inject(Object) with example as parameter.
+		// 2. Call the method context.inject(...) with example as parameter.
+
 		// END OF THE EXERCISE
 		example.doSomething();
 	}
