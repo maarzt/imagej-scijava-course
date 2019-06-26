@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.scijava.services;
+package de.mpicbg.learnathon.course.scijava.exercise1_services;
 
 import org.scijava.Context;
 import org.scijava.log.LogService;

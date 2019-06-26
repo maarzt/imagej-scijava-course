@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.scijava.bird_display.display;
+package de.mpicbg.learnathon.course.scijava.exercise3_bird_display.display;
 
 import org.scijava.display.Display;
 import org.scijava.display.event.DisplayDeletedEvent;

@@ -29,9 +29,9 @@
  * #L%
  */
 
-package de.mpicbg.learnathon.course.scijava.bird_display.display;
+package de.mpicbg.learnathon.course.scijava.exercise3_bird_display.display;
 
-import de.mpicbg.learnathon.course.scijava.bird_display.Bird;
+import de.mpicbg.learnathon.course.scijava.exercise3_bird_display.Bird;
 import org.scijava.display.AbstractDisplay;
 import org.scijava.display.Display;
 import org.scijava.plugin.Plugin;

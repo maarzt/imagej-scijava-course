@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.scijava.animal_service;
+package de.mpicbg.learnathon.course.scijava.exercise2_animal_service;
 
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;

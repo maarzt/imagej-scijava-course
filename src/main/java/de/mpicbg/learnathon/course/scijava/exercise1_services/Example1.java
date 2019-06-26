@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.scijava.services;
+package de.mpicbg.learnathon.course.scijava.exercise1_services;
 
 import net.imagej.ImageJ;
 import org.scijava.ui.UIService;
