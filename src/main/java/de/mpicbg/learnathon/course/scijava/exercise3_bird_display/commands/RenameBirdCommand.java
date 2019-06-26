@@ -6,9 +6,9 @@
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package de.mpicbg.learnathon.course.bird_display.commands;
+package de.mpicbg.learnathon.course.scijava.exercise3_bird_display.commands;
 
-import de.mpicbg.learnathon.course.bird_display.Bird;
+import de.mpicbg.learnathon.course.scijava.exercise3_bird_display.Bird;
 import org.scijava.ItemIO;
 import org.scijava.command.Command;
 import org.scijava.plugin.Parameter;
@@ -21,11 +21,14 @@ import org.scijava.plugin.Plugin;
 @Plugin(type = Command.class, menuPath = "Example > Name Bird")
 public class RenameBirdCommand implements Command {
 
-	@Parameter(type = ItemIO.BOTH, label = "Bird") private Bird input;
+	@Parameter(type = ItemIO.BOTH, label = "Bird")
+	private Bird input;
 
-	@Parameter(label = "New name") String name;
+	@Parameter(label = "New name")
+	String name;
 
-	@Override public void run() {
+	@Override
+	public void run() {
 		input.setName(name);
 	}
 }

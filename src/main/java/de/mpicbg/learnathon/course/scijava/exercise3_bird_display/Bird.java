@@ -30,7 +30,8 @@ public class Bird {
 		return kind;
 	}
 
-	@Override public String toString()
+	@Override
+	public String toString()
 	{
 		return "Bird " + name + " (" + kind + ")";
 	}

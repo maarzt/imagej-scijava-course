@@ -42,9 +42,8 @@ import org.scijava.plugin.Plugin;
  * that can be anything like: font size, color, display mode. This simple example
  * doesn't use any of these possibilities.
  */
-@Plugin(type = Display.class) public class BirdDisplay
-		extends AbstractDisplay< Bird >
-{
+@Plugin(type = Display.class)
+public class BirdDisplay extends AbstractDisplay< Bird > {
 
 	public BirdDisplay() {
 		super(Bird.class);

@@ -6,9 +6,9 @@
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package de.mpicbg.learnathon.course.bird_display.commands;
+package de.mpicbg.learnathon.course.scijava.exercise3_bird_display.commands;
 
-import de.mpicbg.learnathon.course.bird_display.Bird;
+import de.mpicbg.learnathon.course.scijava.exercise3_bird_display.Bird;
 import net.imagej.ImageJ;
 import org.scijava.ItemIO;
 import org.scijava.command.Command;
@@ -22,11 +22,14 @@ import org.scijava.plugin.Plugin;
 @Plugin(type = Command.class, menuPath = "Example > New Bird")
 public class NewBirdCommand implements Command {
 
-	@Parameter(choices = { "Parrot", "Owl", "Kiwi" }) private String kind;
+	@Parameter(choices = { "Parrot", "Owl", "Kiwi" })
+	private String kind;
 
-	@Parameter(type = ItemIO.OUTPUT) private Bird output;
+	@Parameter(type = ItemIO.OUTPUT)
+	private Bird output;
 
-	@Override public void run() {
+	@Override
+	public void run() {
 		output = new Bird(kind);
 	}
 

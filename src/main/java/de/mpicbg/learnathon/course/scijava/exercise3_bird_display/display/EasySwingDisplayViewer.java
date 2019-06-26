@@ -20,18 +20,21 @@ abstract public class EasySwingDisplayViewer< T >
 
 	private final Class< T > classOfObject;
 
-	@Parameter ObjectService objectService;
+	@Parameter
+	ObjectService objectService;
 
 	protected EasySwingDisplayViewer(Class< T > classOfObject)
 	{
 		this.classOfObject = classOfObject;
 	}
 
-	@Override public boolean isCompatible(final UserInterface ui) {
+	@Override
+	public boolean isCompatible(final UserInterface ui) {
 		return ui instanceof SwingUI;
 	}
 
-	@Override public boolean canView(final Display< ? > d) {
+	@Override
+	public boolean canView(final Display< ? > d) {
 		Object object = d.get(0);
 		if (!classOfObject.isInstance(object)) return false;
 		T value = (T) object;
@@ -48,13 +51,15 @@ abstract public class EasySwingDisplayViewer< T >
 
 	protected abstract JPanel createDisplayPanel(T value);
 
-	@Override public void onDisplayDeletedEvent(DisplayDeletedEvent e)
+	@Override
+	public void onDisplayDeletedEvent(DisplayDeletedEvent e)
 	{
 		super.onDisplayDeletedEvent(e);
 		objectService.removeObject(getDisplay().get(0));
 	}
 
-	@Override public void view(final DisplayWindow w, final Display< ? > d) {
+	@Override
+	public void view(final DisplayWindow w, final Display< ? > d) {
 		objectService.addObject(d.get(0));
 		super.view(w, d);
 		final JPanel content = createDisplayPanel(getDisplay().get(0));
@@ -84,27 +89,32 @@ abstract public class EasySwingDisplayViewer< T >
 			add(panel);
 		}
 
-		@Override public Display< ? > getDisplay() {
+		@Override
+		public Display< ? > getDisplay() {
 			return display;
 		}
 
 		// -- DisplayPanel methods --
 
-		@Override public DisplayWindow getWindow() {
+		@Override
+		public DisplayWindow getWindow() {
 			return window;
 		}
 
-		@Override public void redoLayout()
+		@Override
+		public void redoLayout()
 		{
 			viewer.redoLayout();
 		}
 
-		@Override public void setLabel(String s)
+		@Override
+		public void setLabel(String s)
 		{
 			viewer.setLabel(s);
 		}
 
-		@Override public void redraw()
+		@Override
+		public void redraw()
 		{
 			viewer.redraw();
 		}

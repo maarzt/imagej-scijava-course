@@ -42,9 +42,9 @@ import java.awt.*;
 /**
  * This class is responsible for displaying the {@link Bird}.
  */
-@Plugin(type = DisplayViewer.class) public class SwingBirdDisplayViewer
-		extends EasySwingDisplayViewer< Bird >
-{
+@Plugin(type = DisplayViewer.class)
+public class SwingBirdDisplayViewer extends EasySwingDisplayViewer< Bird > {
+
 	/**
 	 * Keeps a reference to the {@link Bird} that is displayed.
 	 */
@@ -60,12 +60,14 @@ import java.awt.*;
 		super(Bird.class);
 	}
 
-	@Override protected boolean canView(Bird bird)
+	@Override
+	protected boolean canView(Bird bird)
 	{
 		return true;
 	}
 
-	@Override protected JPanel createDisplayPanel(Bird bird)
+	@Override
+	protected JPanel createDisplayPanel(Bird bird)
 	{
 		this.bird = bird;
 		final JPanel panel = new JPanel();
@@ -83,18 +85,21 @@ import java.awt.*;
 	 * Called each time the {@link Bird} is output of a command.
 	 * ({@code @Parameter(type = ItemIO.OUTPUT)} or {@code @Parameter(type = ItemIO.BOTH)})
 	 */
-	@Override public void redraw()
+	@Override
+	public void redraw()
 	{
 		labelName.setText(bird.getName());
 		getWindow().pack();
 	}
 
-	@Override public void redoLayout()
+	@Override
+	public void redoLayout()
 	{
 		// ignored
 	}
 
-	@Override public void setLabel(final String s)
+	@Override
+	public void setLabel(final String s)
 	{
 		// ignored
 	}

@@ -12,14 +12,14 @@ public class ImplementColorDisplay {
 	 * ADVANCED EXERCISE: Implement a SciJava display for colors.
 	 *
 	 * The UIService can show a lot of stuff:
-	 * * Differenent image types like:
+	 * * Different image types like:
 	 *   - RandomAccessibleInterval, Img, ImgPlus, Dataset and ImagePlus.
 	 * * Numbers, Strings
 	 * * Tables & Diagrams.
 	 * But it cannot display a simple color. This is because there is no
 	 * display implemented for colors yet. The goal of this exercise
 	 * is to extend the UIService to be able to display Colors.
-	 * We take the bird display example as a starting point an modify it
+	 * We take the bird display example as a starting point. We modify it,
 	 * such that it displays a color instead of a bird.
 	 *
 	 * Step 0:
@@ -31,7 +31,7 @@ public class ImplementColorDisplay {
 	 *   package, and rename them to ColorDisplay and SwingColorDisplayViewer.
 	 *
 	 * Step 2:
-	 * * In both classes ColorDisplay and SwingColorDisplay. Replace
+	 * * In both classes ColorDisplay and SwingColorDisplayViewer. Replace
 	 *   every use of the class Bird with Color.
 	 *
 	 * Step 3:
