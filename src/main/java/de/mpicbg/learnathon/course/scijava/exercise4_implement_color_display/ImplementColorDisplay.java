@@ -1,4 +1,4 @@
-package de.mpicbg.learnathon.course.advanced;
+package de.mpicbg.learnathon.course.scijava.exercise4_implement_color_display;
 
 import net.imglib2.type.numeric.ARGBType;
 import org.scijava.Context;
